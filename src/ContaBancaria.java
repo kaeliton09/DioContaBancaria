@@ -21,7 +21,22 @@ public class ContaBancaria {
         this.saldo += valor;
     }
 
+    public float consultarChequeEspecial(){
+        return getChequeEspecial();
+    }
 
+    public float consultarSaldo(){
+        return getSaldo();
+    }
+
+    public boolean verificarChequeEspecial(){
+        return isStatusChequeEspecial();
+    }
+
+    public void pagarBoleto(float valor){
+        if(valor > this.saldo) throw new ValoresExceptions("valor do boleto nao pode ser pago");
+        this.saldo -= valor;
+    }
 
     public float getSaldo() {
         return saldo;
