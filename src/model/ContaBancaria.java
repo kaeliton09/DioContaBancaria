@@ -1,4 +1,5 @@
-import Exception.ValoresExceptions;
+package model;
+
 public class ContaBancaria {
     //atributos
     private float saldo;
@@ -12,12 +13,10 @@ public class ContaBancaria {
     }
 
     public void sacar(Float valor) {
-        if(valor > this.saldo) throw new ValoresExceptions("valor para saque invalido");
         this.saldo -= valor;
     }
 
-    public void depositar(Float valor) throws ValoresExceptions{
-        if(valor <= 0) throw new ValoresExceptions("o valor de deposito nao pode ser zero ou negativo");
+    public void depositar(Float valor){
         this.saldo += valor;
     }
 
@@ -34,7 +33,6 @@ public class ContaBancaria {
     }
 
     public void pagarBoleto(float valor){
-        if(valor > this.saldo) throw new ValoresExceptions("valor do boleto nao pode ser pago");
         this.saldo -= valor;
     }
 
