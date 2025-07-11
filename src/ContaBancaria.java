@@ -16,7 +16,7 @@ public class ContaBancaria {
         this.saldo -= valor;
     }
 
-    public void depositar(Float valor){
+    public void depositar(Float valor) throws ValoresExceptions{
         if(valor <= 0) throw new ValoresExceptions("o valor de deposito nao pode ser zero ou negativo");
         this.saldo += valor;
     }
